@@ -4,6 +4,19 @@ import * as calculator from "./calculator.js";
 import Card from "./Card.jsx";
 import contacts from "./contacts.js";
 
+
+function createCard(contact){
+    return (
+        <Card 
+        key = {contact.id}
+        name= {contact.name}
+        img= {contact.imgURL}
+        tel= {contact.phone}
+        email= {contact.email}
+        />
+    );
+}
+
 function App(){
 
     console.log(contacts);
@@ -16,23 +29,10 @@ function App(){
         <li>{calculator.subtract(7, 2)}</li>
         <li>{calculator.divide(5, 2)}</li>
         </ul>
-        <Card 
-        name= {contacts[0].name}
-        img= {contacts[0].imgURL}
-        tel= {contacts[0].phone}
-        email= {contacts[0].email}/>
+        {contacts.map(createCard)}
+        
 
-        <Card 
-        name= {contacts[1].name}
-        img= {contacts[1].imgURL}
-        tel= {contacts[1].phone}
-        email= {contacts[1].email}/>
-
-        <Card 
-        name= {contacts[2].name}
-        img= {contacts[2].imgURL}
-        tel= {contacts[2].phone}
-        email= {contacts[2].email}/>
+        
 
     </div>
 }
