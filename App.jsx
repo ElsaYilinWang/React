@@ -4,6 +4,21 @@ import * as calculator from "./calculator.js";
 import Card from "./Card.jsx";
 import contacts from "./contacts.js";
 import emojipedia from "./emojipedia.jsx";
+import Login from "./Login.jsx";
+
+// Login page
+var isLoggedIn = false;
+
+// Ternary Operator
+// CONDITION ? DO IF TRUE : DO IF FALSE
+function renderConditionally(){
+    //if (isLoggedIn === true){
+        //return <h1>Hello</h1>
+    //} else {
+        //return <Login />;
+    //}
+    isLoggedIn? <h1>Hello</h1> : <Login />;
+}
 
 // Use arrow function to simplify the function
 function createCard(contact){
@@ -52,7 +67,7 @@ function App(){
             />
         ))}
         
-
+        <Login userIsLoggedIn={isLoggedIn} />
         
 
     </div>
