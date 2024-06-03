@@ -47,6 +47,8 @@ console.log(newNumbers);
 
 function App(){
 
+    // useState doc: https://react.dev/reference/react/useState
+
     // useState Hooks
     setInterval(updateTime, 1000);
 
