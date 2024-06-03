@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Heading from "./Heading.jsx";
 import * as calculator from "./calculator.js";
 import Card from "./Card.jsx";
@@ -47,10 +47,26 @@ console.log(newNumbers);
 
 function App(){
 
+    // useState Hooks
+    setInterval(updateTime, 1000);
+
+    const now = new Date().toLocaleTimeString();
+
+    const [time, setTime] = useState(now);
+
+    function updateTime(){
+        const newTime = new Date().toLocaleTimeString();
+        setTime(newTime);
+    }
+
+
+
     console.log(contacts);
 
     return <div>
         <Heading />
+        <h1>{time}</h1>
+        <button onClick={updateTime}>Get Time</button>
         <ul>
         <li>{calculator.add(1, 2)}</li>
         <li>{calculator.multiply(2, 3)}</li>
